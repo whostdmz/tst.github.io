@@ -64,7 +64,6 @@ nav ul {
   gap: 30px;
   flex-wrap: wrap;
   justify-content: flex-start;
-
   padding-left: 0;
   margin-left: 0;
 }
@@ -81,6 +80,7 @@ nav a {
 
 nav a:hover {
   color: var(--theme-color);
+  
 }
 
 /* Main content */
@@ -230,6 +230,7 @@ h3 {
   overflow: hidden;
   font-family: monospace;
 }
+
 
 /* Page header */
 .page-header {
