@@ -14,14 +14,14 @@
   <button id="theme-toggle" aria-label="Basculer le thème"></button>
 
   <header>
-    <a href="main.html">
+    <a href="index.html">
       <img src="assets/logo.png" alt="Logo whostmdz" class="site-logo">
     </a>
     <nav>
       <ul>
         <li><a href="projets.html">projets</a></li>
-        <li><a href="veille.html">veille</a></li>
         <li><a href="contact.html">contact</a></li>
+        <li><a href="veille.html">veille</a></li>
       </ul>
     </nav>
   </header>
@@ -36,7 +36,21 @@
         </p>
       </div>
 
-      <div class="veille-grid">
+      <div class="rss-controls">
+        <button id="refresh-feed" class="refresh-btn">
+          🔄 Actualiser le flux
+        </button>
+        <div id="loading" class="loading" style="display: none;">
+          Chargement des articles...
+        </div>
+      </div>
+
+      <div id="rss-feed" class="veille-grid">
+        <!-- Les articles RSS seront chargés ici -->
+      </div>
+
+      <!-- Articles de secours si le RSS ne charge pas -->
+      <div id="fallback-articles" class="veille-grid" style="display: none;">
         <article class="veille-item">
           <h3>Intelligence Artificielle et Développement</h3>
           <div class="date">15 Janvier 2026</div>
@@ -58,52 +72,6 @@
           </p>
           <a href="#" target="_blank" rel="noopener">Lire l'article →</a>
         </article>
-
-        <article class="veille-item">
-          <h3>WebAssembly en 2026</h3>
-          <div class="date">5 Janvier 2026</div>
-          <p>
-            État des lieux de WebAssembly et son adoption croissante. 
-            Performances, cas d'usage et intégration avec les frameworks 
-            JavaScript modernes.
-          </p>
-          <a href="#" target="_blank" rel="noopener">Lire l'article →</a>
-        </article>
-
-        <article class="veille-item">
-          <h3>Linux : Kernel 6.8</h3>
-          <div class="date">2 Janvier 2026</div>
-          <p>
-            Les nouveautés du kernel Linux 6.8. Améliorations de performance, 
-            nouveaux drivers et fonctionnalités de sécurité renforcées pour 
-            les systèmes embarqués.
-          </p>
-          <a href="#" target="_blank" rel="noopener">Lire l'article →</a>
-        </article>
-
-        <article class="veille-item">
-          <h3>Python 3.13 : Quoi de neuf ?</h3>
-          <div class="date">28 Décembre 2025</div>
-          <p>
-            Tour d'horizon des nouvelles fonctionnalités de Python 3.13. 
-            Améliorations de typage, optimisations de performance et 
-            nouveaux modules de la bibliothèque standard.
-          </p>
-          <a href="#" target="_blank" rel="noopener">Lire l'article →</a>
-        </article>
-
-        <article class="veille-item">
-          <h3>DevSecOps : Intégrer la sécurité dès le début</h3>
-          <div class="date">20 Décembre 2025</div>
-          <p>
-            Guide pratique pour intégrer la sécurité dans les pipelines CI/CD. 
-            Outils, bonnes pratiques et automatisation des tests de sécurité 
-            dans le processus de développement.
-          </p>
-          <a href="#" target="_blank" rel="noopener">Lire l'article →</a>
-        </article>
-
-
       </div>
     </div>
   </main>
@@ -113,5 +81,6 @@
   </footer>
 
   <script src="main.js"></script>
+  <script src="veille-rss.js"></script>
 </body>
 </html>
